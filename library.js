@@ -1,4 +1,4 @@
-var library = {
+let library = {
        tracks: {
               t01: {
                      id: "t01",
@@ -39,7 +39,7 @@ var library = {
 // p01: Coding Music - 2 tracks
 // p02: Other Playlist - 1 tracks
 
-var printPlaylists = function () {
+let printPlaylists = function () {
        for (key in library.playlists) {
               let playlistNumber = key;
               let name = library.playlists[key].name;
@@ -55,7 +55,7 @@ printPlaylists();
 // t02: Model View Controller by James Dempsey (WWDC 2003)
 // t03: Four Thirty-Three by John Cage (Woodstock 1952)
 
-var printTracks = function () {
+let printTracks = function () {
        for (key in library.tracks) {
               let trackNumber = key;
               let artist = library.tracks[key].artist;
@@ -72,7 +72,7 @@ printTracks();
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
 
-var printPlaylist = function (playlistId) {
+let printPlaylist = function (playlistId) {
        let playlistName = library.playlists[playlistId].name;
        let numberTracks = library.playlists[playlistId].tracks.length;
        console.log(`${playlistId}: ${playlistName} - ${numberTracks} tracks`);
@@ -88,7 +88,7 @@ printPlaylist("p01");
 
 // adds an existing track to an existing playlist
 
-var addTrackToPlaylist = function (trackId, playlistId) {
+let addTrackToPlaylist = function (trackId, playlistId) {
        library.playlists[playlistId].tracks.push(trackId);
        console.log(`${trackId} was added to playlist ${playlistId}`);
 }
@@ -98,13 +98,13 @@ addTrackToPlaylist("t03", "p02");
 // generates a unique id
 // (use this for addTrack and addPlaylist)
 
-var uid = function () {
+let uid = function () {
        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
 }
 
 // adds a track to the library
 
-var addTrack = function (name, artist, album) {
+let addTrack = function (name, artist, album) {
 
        let uniqueID = uid();
        library.tracks[uniqueID] = {
@@ -116,11 +116,11 @@ var addTrack = function (name, artist, album) {
        console.log(library.tracks);
 }
 
-addTrack("Lowrider", "War", "Why Cant We Be Friends");
+addTrack("Efrerm", "protestant song", "God is good all the time");
 
 // adds a playlist to the library
 
-var addPlaylist = function (name) {
+let addPlaylist = function (name) {
 
        let uniqueID = uid();
        library.playlists[uniqueID] = {
